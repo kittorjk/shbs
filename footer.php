@@ -52,8 +52,8 @@
         </div>
     </div>
 </div>
-<script src="js\jquery-1.10.2.min.js" type="text/javascript"></script>
-<script src="js\bootstrap.min.js"></script>
+<!--<script src="js\jquery-1.10.2.min.js" type="text/javascript"></script>-->
+<!--<script src="js\bootstrap.min.js"></script>-->
 <script src="js\actions.js"></script>
 <!--okzoom Plugin-->
 <script src="js/okzoom.min.js" type="text/javascript"></script>
