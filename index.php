@@ -11,24 +11,77 @@ if(!empty($result)){
 }
 // include header 
 include 'header.php'; ?>
-<div id="banner">
+<div class="row">
+    <div class="col-md-12">
+        <div class="container">
+          <h2>Carousel Example</h2>  
+          <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarousel" data-slide-to="1"></li>
+              <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+        
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <?php
+                    $directory = "images/banner-images/";
+                    //echo "$directory";
+                    //get all files in a directory. If any specific extension needed just have to put the .extension
+                    //$local = glob($directory . "*"); 
+                    $local = glob("" . $directory . "{*.jpeg,*.jpg,*.gif,*.png}", GLOB_BRACE);
+                    //print each file name
+                    foreach($local as $item)
+                    { ?>
+                    <div class="item <?php if ($local[0] == $item){ echo "active"; } ?>">
+                        <img src="<?php echo $item; ?>" alt="<?php echo $item; ?>" style="width:100%;"/>
+                    </div>
+                <?php
+                    }
+                ?>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+    </div>
+</div>
+<!--<div id="banner">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
                 <div class="banner-content ">
                     <div class="banner-carousel owl-carousel owl-theme">
-                        <div class="item">
-                            <img src="images/banner-img-2.jpg" alt=""/>
-                        </div>
-                        <div class="item">
-                            <img src="images/banner-img-1.jpg" alt=""/>
-                        </div>
+                        <?php
+                            //$directory = "images/banner-images/";
+                            //echo "$directory";
+                            //get all files in a directory. If any specific extension needed just have to put the .extension
+                            //$local = glob($directory . "*"); 
+                            //$local = glob("" . $directory . "{*.jpeg,*.jpg,*.gif,*.png}", GLOB_BRACE);
+                            //print each file name
+                            //foreach($local as $item)
+                            //{ ?>
+                            <div class="item">
+                                <img src="<?php //echo $item; ?>" alt="<?php //echo $item; ?>"/>
+                            </div>
+                        <?php
+                            //}
+                        ?>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</div>-->
 <div class="product-section popular-products">
     <div class="container">
         <div class="row">
