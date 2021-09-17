@@ -47,8 +47,8 @@ include 'database.php';
                 if($file_size > 2097152){
                     $errors[]='File size must be excately 2 MB';
                 }
-                if(file_exists('images/'.$_POST{'old_logo'})){
-                    unlink('images/'.$_POST{'old_logo'});
+                if(file_exists('images/'.$_POST['old_logo'])){
+                    unlink('images/'.$_POST['old_logo']);
                 }
                 $file_name = time().str_replace(array(' ','_'), '-', $file_name);
 
